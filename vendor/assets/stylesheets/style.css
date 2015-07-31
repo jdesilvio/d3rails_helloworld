@@ -1,0 +1,38 @@
+.node rect {
+    cursor: move;
+    fill-opacity: .5;
+    shape-rendering: crispEdges;
+}
+
+.node rect:hover {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+
+.node text {
+    pointer-events: none;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #fff;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.headline {
+    font-family: "Helvetica";
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.highlight {
+    color: black;
+}
+
+.highlight:hover {
+    text-shadow: 1px 1px 1px #808080;
+}
+
+body {
+  text-align: center;
+}
