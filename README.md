@@ -3,17 +3,19 @@
 This is a basic app that employs the simplest approach to adding a D3 chart. I did not want to create any models or modify any controllers. Just create a static view that renders a chart.
 
 ###D3.js
-D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. (From [d3js.org](http://d3js.org/))
+D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. (From [d3js.org](http://d3js.org/) website)
 
-
+---
 **Here are the steps:**
 
 1. Create static page controller
     rails generate controller StaticPages home
 
 2. Add javascripts to `config/initializers/assets.rb`:
+```
     Rails.application.config.assets.precompile += %w( d3.js )
     Rails.application.config.assets.precompile += %w( d3example.js )
+```
 
 3. Add D3 scripts to `vendors/javascripts` (i.e., `d3.js`)
 
@@ -58,3 +60,8 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 8. Put data in the `public` folder
 
 **That's it!**
+
+---
+###Credits
+http://d3js.org/
+Chart taken from: http://bl.ocks.org/mbostock/4062045
