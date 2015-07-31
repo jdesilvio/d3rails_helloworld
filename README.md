@@ -24,32 +24,35 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 
 * Update app/views/application.html/erb to include `<%= yield(:head) %>` and `<%= yield(:body) %>`
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>D3app2</title>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= csrf_meta_tags %>
-      <%= yield(:head) %>
-    </head>
-    <body>
-      <%= yield %>
-      <%= yield(:body) %>
-    </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D3app2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+<body>
+  <%= yield %>
+  <%= yield(:body) %>
+</body>
+</html>
+```
 
 * Add content_for tags to home.html.erb to call the page specific javascripts:
 
-    <% content_for :head do %>
-      <%= javascript_include_tag 'd3' %>
-      <%= javascript_include_tag 'sankey' %>
-    <% end %>
+```ruby
+<% content_for :head do %>
+  <%= javascript_include_tag 'd3' %>
+<% end %>
 
-    <h1>D3 Hello World</h1>
+<h1>D3 Hello World</h1>
 
-    <% content_for :body do %>
-      <%= javascript_include_tag 'sankeycreate' %>
-    <% end %>
+<% content_for :body do %>
+  <%= javascript_include_tag 'chart' %>
+<% end %>
+```
 
 * Put data in lib/data
