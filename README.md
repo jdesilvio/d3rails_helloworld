@@ -8,51 +8,53 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 
 **Here are the steps:**
 
-* Create static page controller
+1. Create static page controller
     rails generate controller StaticPages home
 
-* Add javascripts to config/initializers/assets.rb
+2. Add javascripts to `config/initializers/assets.rb`:
     Rails.application.config.assets.precompile += %w( d3.js )
     Rails.application.config.assets.precompile += %w( d3example.js )
 
-* Add D3 scripts to vendors/javascripts
-    d3.js
+3. Add D3 scripts to `vendors/javascripts` (i.e., `d3.js`)
 
-* Add custom javascripts tp app/assets/javascripts
+4. Add custom javascripts to `app/assets/javascripts`
 
-* Add stylesheet to app/assets/stylesheets
+5. Add stylesheet to `app/assets/stylesheets`
 
-* Update app/views/application.html/erb to include `<%= yield(:head) %>` and `<%= yield(:body) %>`
+6. Update `app/views/application.html/erb` to include
+`<%= yield(:head) %>` and `<%= yield(:body) %>`
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>D3app2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= yield(:head) %>
-</head>
-<body>
-  <%= yield %>
-  <%= yield(:body) %>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>D3app2</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <%= yield(:head) %>
+    </head>
+    <body>
+      <%= yield %>
+      <%= yield(:body) %>
+    </body>
+    </html>
 ```
 
-* Add content_for tags to home.html.erb to call the page specific javascripts:
+7. Add `content_for` tags to home.html.erb to call the page specific javascripts:
 
 ```ruby
-<% content_for :head do %>
-  <%= javascript_include_tag 'd3' %>
-<% end %>
+    <% content_for :head do %>
+      <%= javascript_include_tag 'd3' %>
+    <% end %>
 
-<h1>D3 Hello World</h1>
+    <h1>D3 Hello World</h1>
 
-<% content_for :body do %>
-  <%= javascript_include_tag 'chart' %>
-<% end %>
+    <% content_for :body do %>
+      <%= javascript_include_tag 'chart' %>
+    <% end %>
 ```
 
-* Put data in lib/data
+8. Put data in the `public` folder
+
+**That's it!**
