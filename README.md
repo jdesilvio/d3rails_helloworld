@@ -66,5 +66,6 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 
 ---
 ###Credits
-http://d3js.org/
-Chart taken from: http://bl.ocks.org/mbostock/4062045
+
+- http://d3js.org/
+- Chart taken from: http://bl.ocks.org/mbostock/4062045
