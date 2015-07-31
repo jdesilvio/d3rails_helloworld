@@ -12,13 +12,11 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 ```ruby
     rails generate controller StaticPages home
 ```
-
 2. Add javascripts to `config/initializers/assets.rb`:
 ```ruby
     Rails.application.config.assets.precompile += %w( d3.js )
     Rails.application.config.assets.precompile += %w( d3example.js )
 ```
-
 3. Add D3 scripts to `vendors/javascripts` (i.e., `d3.js` from http://d3js.org/)
 
 4. Add custom javascripts to `app/assets/javascripts`
