@@ -26,7 +26,8 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 * Add stylesheet to `app/assets/stylesheets`
 
 * Update `app/views/application.html/erb` to include
-  `<%= yield(:head) %>` and `<%= yield(:body) %>`
+
+`<%= yield(:head) %>` and `<%= yield(:body) %>`
 
 ```html
     <!DOCTYPE html>
