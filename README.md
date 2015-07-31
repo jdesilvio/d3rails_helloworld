@@ -8,23 +8,25 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
 ---
 **Here are the steps:**
 
-1. Create static page controller
+* Create static page controller
 ```ruby
     rails generate controller StaticPages home
 ```
-2. Add javascripts to `config/initializers/assets.rb`:
+
+* Add javascripts to `config/initializers/assets.rb`:
 ```ruby
     Rails.application.config.assets.precompile += %w( d3.js )
     Rails.application.config.assets.precompile += %w( d3example.js )
 ```
-3. Add D3 scripts to `vendors/javascripts` (i.e., `d3.js` from http://d3js.org/)
 
-4. Add custom javascripts to `app/assets/javascripts`
+* Add D3 scripts to `vendors/javascripts` (i.e., `d3.js` from http://d3js.org/)
 
-5. Add stylesheet to `app/assets/stylesheets`
+* Add custom javascripts to `app/assets/javascripts`
 
-6. Update `app/views/application.html/erb` to include
-`<%= yield(:head) %>` and `<%= yield(:body) %>`
+* Add stylesheet to `app/assets/stylesheets`
+
+* Update `app/views/application.html/erb` to include
+  `<%= yield(:head) %>` and `<%= yield(:body) %>`
 
 ```html
     <!DOCTYPE html>
@@ -43,7 +45,7 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
     </html>
 ```
 
-7. Add `content_for` tags to `home.html.erb` to call the page specific javascripts:
+* Add `content_for` tags to `home.html.erb` to call the page specific javascripts:
 
 ```ruby
     <% content_for :head do %>
@@ -57,7 +59,7 @@ D3.js is a JavaScript library for manipulating documents based on data. D3 helps
     <% end %>
 ```
 
-8. Put data in the `public` folder
+* Put data in the `public` folder
 
 **That's it!**
 
